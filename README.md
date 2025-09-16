@@ -24,7 +24,7 @@ O desafio avalia sua capacidade de trabalhar com nosso stack principal (**Effect
 
 1. **Clone o repositório e instale as dependências:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/ReiLoko4/ledda-notes.git
    cd ledda-notes
    npm install
    ```
@@ -54,6 +54,9 @@ O desafio avalia sua capacidade de trabalhar com nosso stack principal (**Effect
    # Terminal 2 - Cliente React (porta 3000)
    npm run dev-client
    ```
+> [!WARNING]  
+> **Cuidado ao executar com Bun, é possível haver instabilidade, pois o app foi pensado pra rodar em node**
+   
 
 4. **Acessar a aplicação:**
    - Frontend: http://localhost:3000
