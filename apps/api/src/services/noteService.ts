@@ -1,4 +1,4 @@
-import { Effect, Console } from "effect"
+import { Effect } from "effect"
 import { notes } from "src/db/schema.js";
 import { db } from "src/db/client.js";
 import { DatabaseError, NotFoundError } from "src/domain/errors.js";

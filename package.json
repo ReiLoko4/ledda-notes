@@ -1,0 +1,27 @@
+{
+  "name": "ledda-notes",
+  "version": "1.0.0",
+  "description": "A note-taking application with React frontend and API backend",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "install-server": "npm install --prefix apps/api",
+    "install-client": "npm install --prefix apps/web",
+    "dev-server": "npm run dev --prefix apps/api",
+    "dev-client": "npm run dev --prefix apps/web -- --open",
+    "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\""
+  },
+  "keywords": [
+    "notes",
+    "react",
+    "typescript",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

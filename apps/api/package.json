@@ -37,6 +37,7 @@
     "better-sqlite3": "^12.2.0",
     "drizzle-orm": "^0.44.5",
     "effect": "^3.17.7",
+    "ledda-notes": "file:../..",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {

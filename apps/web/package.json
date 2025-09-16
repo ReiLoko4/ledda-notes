@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.35.0",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@tanstack/react-query": "^5.51.23",
     "clsx": "^2.0.0",
+    "ledda-notes": "file:../..",
     "lucide-react": "^0.279.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
