@@ -1,4 +1,10 @@
-# README — Mini Notes App (Effect + React + Drizzle)
+# README — Mini Notes App 
+## Demo
+
+
+https://github.com/user-attachments/assets/0b46b77e-0806-458f-b40c-248023754d05
+
+
 
 ## 🎯 Objetivo
 
