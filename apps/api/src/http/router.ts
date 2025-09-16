@@ -29,7 +29,7 @@ const AppApi = HttpApi.make("app").add(
     .add(HttpApiEndpoint.get("getNoteById")`/note/${idParam}`.addSuccess(NoteSchema).addError(NotFoundErrorSchema))
     .add(HttpApiEndpoint.post("createNote")`/note`.setPayload(NewNoteSchema).addSuccess(NoteSchema).addError(DatabaseErrorSchema))
     .add(HttpApiEndpoint.put("updateNote")`/note`.setPayload(UpdateNoteSchema).addSuccess(NoteSchema).addError(NotFoundErrorSchema))
-    .add(HttpApiEndpoint.del("removeNote")`/note/${idParam}`.setPayload(Schema.Number).addSuccess(NoteSchema).addError(NotFoundErrorSchema))
+    .add(HttpApiEndpoint.del("removeNote")`/note/`.setPayload(Schema.Struct({ id: Schema.Number })).addSuccess(NoteSchema).addError(NotFoundErrorSchema))
 )
 
 const NoteLive = HttpApiBuilder.group(AppApi, "notes", (handlers) =>
@@ -38,8 +38,9 @@ const NoteLive = HttpApiBuilder.group(AppApi, "notes", (handlers) =>
     .handle("getNoteById", ({ path: id }) => NoteService.getById(Number(id)))
     .handle("createNote", (req) => NoteService.create(req.payload))
     .handle("updateNote", (req) => NoteService.update(req.payload))
-    .handle("removeNote", ({ path: id }) => NoteService.remove(Number(id)))
+    .handle("removeNote", (req) => NoteService.remove(req.payload.id))
 )
+
 
 export const ApiLive = HttpApiBuilder.api(AppApi).pipe(Layer.provide(NoteLive))
 

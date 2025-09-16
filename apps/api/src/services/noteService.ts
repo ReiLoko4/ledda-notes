@@ -1,10 +1,9 @@
-import { Effect } from "effect"
+import { Effect, Console } from "effect"
 import { notes } from "src/db/schema.js";
 import { db } from "src/db/client.js";
 import { DatabaseError, NotFoundError } from "src/domain/errors.js";
 import { eq } from "drizzle-orm";
 import { NewNote, UpdateNote, type Note } from "src/domain/note.js";
-
 
 
 export const NoteService = {
@@ -48,7 +47,7 @@ export const NoteService = {
         if (!deleted) throw new NotFoundError({ id })
         return deleted as Note
       },
-      catch: e => new NotFoundError({ id, cause: e })
+      catch: e => new NotFoundError({ id: id, cause: e })
     })
 }
 
